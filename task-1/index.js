@@ -1,5 +1,6 @@
 // Function to generate occurrences based on probabilities
 const generateOccurrences = (outcomes, numOccurrences) => {
+
   // Calculate the total probability
   const totalProbability = outcomes.reduce(
     (sum, outcome) => sum + outcome.probability,
@@ -36,6 +37,7 @@ const outcomes = [
   { outcome: "Tail", probability: 65 },
 ];
 
+
 const numOccurrences = 1000;
 const occurrences = generateOccurrences(outcomes, numOccurrences);
 
@@ -45,11 +47,8 @@ const outcomeCounts = occurrences.reduce((counts, outcome) => {
   return counts;
 }, {});
 
-// Output the result
-// console.log("Occurrences:");
-// for (const outcome in outcomeCounts) {
-//   console.log(`${outcome}: ${outcomeCounts[outcome]}`);
-// }
+
+
 console.log(`On triggering the event ${numOccurrences} times,Head appeared ${outcomeCounts["Head"]} times and Tail ${outcomeCounts["Tail"]} times which is roughly inline with the biasness given.`);
 
 module.exports = generateOccurrences;
